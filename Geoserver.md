@@ -15,4 +15,7 @@ Datenspeicher -> Datenquelle hinzufügen -> PostGIS
 
 passwd: postgres
 
+## Abfragen erstellen
+
+Neuer Layer (gdd:gdd) -> SQL-View konfigurieren
 
