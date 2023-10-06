@@ -22,7 +22,9 @@ Neuer Layer (gdd:gdd) -> SQL-View konfigurieren
 
 ## Website abrufen
 
-.../www/Dateiname.html
+Website im directory anlegen: ``` C:\ProgramData\GeoServer\www ```
 
-http://localhost:8080/geoserver/www/ol-demo.html
+Im Browser aufrufen: 
+``` .../www/Dateiname.html ```
+Beispiel: ``` http://localhost:8080/geoserver/www/ol-demo.html ```
 
