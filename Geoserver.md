@@ -1,4 +1,8 @@
 # Geoserver
+
+- [ ] test
+- [ ] test
+
 ## Installieren
 
 Herunterladen, dann Zugriff im Browser: 
