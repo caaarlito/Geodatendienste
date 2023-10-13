@@ -3,12 +3,12 @@
 
 ### 1. 
 
-1a: 
+#### 1a: 
 
 Um das Passwort Problem zu lösen, kann man vor dem Loop eine Umgebungsvariable namens PGPASSWORT festlegen, welches dann automatisch übernommen wird.
 ``` set PGPASSWORD=postgres ```
 
-1b:
+#### 1b:
 ```
 c:
 cd c:\Program Files\PostgreSQL\15\bin
@@ -26,7 +26,7 @@ psql -h localhost -p 5432 -U postgres -d %%G -c "CREATE ROLE %%G SUPERUSER CREAT
 pause
 ```
 
-1c: 
+#### 1c: 
 ```
 1)	cd c:\Program Files\PostgreSQL\15\bin
 	psql -h localhost -p 5432 -U postgres
@@ -36,4 +36,5 @@ pause
 5)	\dt
 ```
 
-### 2.
+#### 1d: 
+
