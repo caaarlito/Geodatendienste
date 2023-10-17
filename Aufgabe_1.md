@@ -37,6 +37,7 @@ pause
 ```
 
 #### 1d: 
+Die ogr2ogr.exe im PostgreSQL-Ordner hat das Format "postgresql" nicht ünterstützt weshalb die im QGIS-Ordner alternativ benutzt wurde
 ```
 cd c:\Program Files\QGIS\bin
 ogr2ogr -f postgresql PG:"dbname=gdd user=gdd password=gdd" "C:\Users\geomedien\Downloads\data\countries.shp" -nln "laender" -nlt PROMOTE_TO_MULTI -a_srs "EPSG:4326"
