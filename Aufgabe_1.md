@@ -40,5 +40,21 @@ pause
 ```
 cd c:\Program Files\QGIS\bin
 ogr2ogr -f postgresql PG:"dbname=gdd user=gdd password=gdd" "C:\Users\geomedien\Downloads\data\countries.shp" -nln "laender" -nlt PROMOTE_TO_MULTI -a_srs "EPSG:4326"
+
+pause
 ```
+
+### 1e:
+
+Bei der Erstellung der Tabelle kann im CREATE Statement hinter dem gewünschten Primary Key dieser VOR dem Einladen der Daten festgelegt werden:
+```CREATE TABLE wgi(landid int PRIMARY KEY, jahr int, wgi float);```
+
+Oder auch: 
+```CREATE TABLE wgi(landid int, jahr int, wgi float, PRIMARY KEY(landid));```
+
+Um einen Primary Key NACH dem Erstellen einer Tabelle festzulegen kann der ALTER Befehl verwendet werden:
+```ALTER TABLE wgi ADD PRIMARY KEY (landid);```
+
+Oder die zweite Möglichkeit:
+```ALTER TABLE wgi ADD CONSTRAINT pk_landid PRIMARY KEY (landid);```
 
