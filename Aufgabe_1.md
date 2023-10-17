@@ -67,3 +67,11 @@ Oder die zweite Möglichkeit:
 ALTER TABLE wgi ADD CONSTRAINT pk_landid PRIMARY KEY (landid, jahr);
 ```
 
+### 1f:
+```
+psql -h localhost -p 5432 -U gdd -d gdd -c "CREATE TABLE wgi(landid int, jahr int, wgi float, PRIMARY KEY(landid, jahr));"
+psql -h localhost -p 5432 -U gdd -d gdd -c "\COPY wgi(landid, jahr, wgi) FROM 'C:\Users\geomedien\Downloads\data\wgi.csv' DELIMITER ';' CSV HEADER;"
+
+psql -h localhost -p 5432 -U gdd -d gdd -c "CREATE TABLE exports_percent_gdp(fid int, iso3 char(3), jahr int, value float, unit_id int, PRIMARY KEY(fid, iso3, jahr, unit_id));"
+psql -h localhost -p 5432 -U gdd -d gdd -c "\COPY exports_percent_gdp(fid, iso3, jahr, value, unit_id) FROM 'C:\Users\geomedien\Downloads\data\exports_percent_gdp.csv' DELIMITER ';' CSV HEADER;"
+```
