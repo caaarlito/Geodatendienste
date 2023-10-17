@@ -77,9 +77,13 @@ psql -h localhost -p 5432 -U gdd -d gdd -c "\COPY exports_percent_gdp(fid, iso3,
 ```
 
 
-## 2
-SELECT a.value, a.iso3, a.jahr, a.value, b.wkb_geometry AS geom
-FROM exports_percent_gdp AS a, laender AS b, wgi AS c
-WHERE a.iso3 = b.iso3 and b.id = c.landid and a.jahr = c.jahr 
-AND b.wkb_geometry IS NOT null
---AND a.jahr = (SELECT MAX(jahr) FROM wgi)
+## 2 -> fehlt
+```
+SELECT a.value, a.iso3, a.jahr, a.value, b.wkb_geometry AS geom 
+FROM exports_percent_gdp AS a, laender AS b, wgi AS c 
+WHERE a.iso3 = b.iso3 and b.id = c.landid 
+AND a.jahr = c.jahr AND b.wkb_geometry IS NOT null
+
+AND a.jahr = (SELECT DISTINCT ON (landid) jahr FROM wgi ORDER BY landid, jahr DESC);
+```
+
