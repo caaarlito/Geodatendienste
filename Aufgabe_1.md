@@ -47,14 +47,14 @@ pause
 ### 1e:
 
 Bei der Erstellung der Tabelle kann im CREATE Statement hinter dem gewünschten Primary Key dieser VOR dem Einladen der Daten festgelegt werden:
-```CREATE TABLE wgi(landid int PRIMARY KEY, jahr int, wgi float);```
+```CREATE TABLE wgi(landid int PRIMARY KEY, jahr int PRIMARY KEY, wgi float);```
 
 Oder auch: 
-```CREATE TABLE wgi(landid int, jahr int, wgi float, PRIMARY KEY(landid));```
+```CREATE TABLE wgi(landid int, jahr int, wgi float, PRIMARY KEY(landid, jahr));```
 
 Um einen Primary Key NACH dem Erstellen einer Tabelle festzulegen kann der ALTER Befehl verwendet werden:
-```ALTER TABLE wgi ADD PRIMARY KEY (landid);```
+```ALTER TABLE wgi ADD PRIMARY KEY (landid, jahr);```
 
 Oder die zweite Möglichkeit:
-```ALTER TABLE wgi ADD CONSTRAINT pk_landid PRIMARY KEY (landid);```
+```ALTER TABLE wgi ADD CONSTRAINT pk_landid PRIMARY KEY (landid, jahr);```
 
