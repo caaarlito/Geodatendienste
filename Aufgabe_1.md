@@ -87,3 +87,17 @@ AND a.jahr = c.jahr AND b.wkb_geometry IS NOT null
 AND a.jahr = (SELECT DISTINCT ON (landid) jahr FROM wgi ORDER BY landid, jahr DESC);
 ```
 
+```
+SELECT
+    wgi.landid,
+    MAX(wgi.jahr) AS aktuellstes_jahr,
+    (
+        SELECT wgi
+        FROM wgi AS inner_wgi
+        WHERE inner_wgi.landid = wgi.landid
+        AND inner_wgi.jahr = MAX(wgi.jahr)
+    ) AS aktuellstes_wgi
+FROM wgi
+GROUP BY landid
+ORDER BY landid, aktuellstes_jahr;
+```
