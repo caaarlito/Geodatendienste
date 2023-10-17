@@ -102,7 +102,7 @@ GROUP BY landid
 ORDER BY landid, aktuellstes_jahr;
 ```
 Eventuell Richtig? -> 187 Zeilen
-'''
+```
 SELECT a.fid, a.iso3, a.jahr, a.value, 
 	(ROUND(a.value))::TEXT AS value_text, 
 	laender.id::INT, 
@@ -120,4 +120,4 @@ AND (laender.id, wgi.jahr) IN (
     AND landid IS NOT NULL
     GROUP BY laender.id)
 ORDER BY laender.id, wgi.jahr
-'''
+```
