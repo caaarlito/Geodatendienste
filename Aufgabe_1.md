@@ -28,8 +28,8 @@ pause
 
 #### 1c: 
 
-1)	```cd c:\Program Files\PostgreSQL\15\bin```
-	psql -h localhost -p 5432 -U postgres
+1)	```cd c:\Program Files\PostgreSQL\15\bin
+	psql -h localhost -p 5432 -U postgres```
 2) 	\l
 3)	DROP DATABASE rmdg;
 4)	\c gdd
