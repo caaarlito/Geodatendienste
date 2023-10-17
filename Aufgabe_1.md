@@ -37,4 +37,8 @@ pause
 ```
 
 #### 1d: 
+```
+cd c:\Program Files\QGIS\15\bin
+ogr2ogr -f postgresql PG:"dbname=gdd user=gdd password=gdd" "C:\Users\geomedien\Downloads\data\countries.shp" -nln "laender" -nlt PROMOTE_TO_MULTI
+```
 
