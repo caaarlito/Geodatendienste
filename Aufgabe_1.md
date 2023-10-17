@@ -75,3 +75,11 @@ psql -h localhost -p 5432 -U gdd -d gdd -c "\COPY wgi(landid, jahr, wgi) FROM 'C
 psql -h localhost -p 5432 -U gdd -d gdd -c "CREATE TABLE exports_percent_gdp(fid int, iso3 char(3), jahr int, value float, unit_id int, PRIMARY KEY(fid, iso3, jahr, unit_id));"
 psql -h localhost -p 5432 -U gdd -d gdd -c "\COPY exports_percent_gdp(fid, iso3, jahr, value, unit_id) FROM 'C:\Users\geomedien\Downloads\data\exports_percent_gdp.csv' DELIMITER ';' CSV HEADER;"
 ```
+
+
+## 2
+SELECT a.value, a.iso3, a.jahr, a.value, b.wkb_geometry AS geom
+FROM exports_percent_gdp AS a, laender AS b, wgi AS c
+WHERE a.iso3 = b.iso3 and b.id = c.landid and a.jahr = c.jahr 
+AND b.wkb_geometry IS NOT null
+--AND a.jahr = (SELECT MAX(jahr) FROM wgi)
