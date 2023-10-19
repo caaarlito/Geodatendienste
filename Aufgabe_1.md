@@ -137,7 +137,8 @@ ORDER BY laender.id, wgi.jahr
 
 ## 3.
 
-Das Dokument ist ein html Code mit diesem Inhalt:
+
+Das Dokument ist ein HTML-Code mit diesem Inhalt:
 ```
 <html>
   <head>
@@ -202,5 +203,6 @@ Das Dokument ist ein html Code mit diesem Inhalt:
   </body>
 </html>
 ```
+
 
 
