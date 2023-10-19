@@ -104,7 +104,7 @@ ORDER BY landid, aktuellstes_jahr;
 Eventuell Richtig? -> 187 Zeilen
 ```
 SELECT a.fid, a.iso3, a.jahr, a.value, 
-	(ROUND(a.value))::TEXT AS value_text, 
+	(ROUND(a.value))::TEXT || '%' AS value_text, 
 	laender.id::INT, 
 	laender.land, laender.wkb_geometry, wgi.wgi
 FROM exports_percent_gdp AS a
