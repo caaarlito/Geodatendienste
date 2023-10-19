@@ -205,7 +205,7 @@ Das Dokument ist ein HTML-Code mit diesem Inhalt:
 
 ## 4.
 
-``` SELECT ST_AsText(ST_Envelope(ST_Transform(wkb_geometry, 3857))) FROM laender WHERE iso3='DEU'; ```
+``` SELECT ST_AsText(ST_Envelope(ST_Transform(ST_SetSRID(wkb_geometry,4326), 3857))) FROM laender WHERE iso3='DEU'; ```
 
 ## 5.
 
