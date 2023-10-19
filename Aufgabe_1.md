@@ -137,7 +137,6 @@ ORDER BY laender.id, wgi.jahr
 
 ## 3.
 
-
 Das Dokument ist ein HTML-Code mit diesem Inhalt:
 ```
 <html>
@@ -204,5 +203,12 @@ Das Dokument ist ein HTML-Code mit diesem Inhalt:
 </html>
 ```
 
+## 4.
+
+``` SELECT ST_AsText(ST_Envelope(ST_Transform(wkb_geometry, 3857))) FROM laender WHERE iso3='DEU'; ```
+
+## 5.
+
+Koordinaten der Bounding Box: 652888.8293406211 5987030.898794127,652888.8293406211 7372844.607748471,1673556.9874144716 7372844.607748471,1673556.9874144716 5987030.898794127,652888.8293406211 5987030.898794127
 
 
