@@ -121,10 +121,7 @@ AND (laender.id, wgi.jahr) IN (
     GROUP BY laender.id)
 ORDER BY laender.id, wgi.jahr
 ```
-
-## 3.
-
-SQL View: 
+SQL View für Geoserver: 
 ```
 SELECT a.fid, a.iso3, a.jahr, a.value, 
 	(ROUND(a.value))::TEXT || '%' AS value_text, 
@@ -137,3 +134,73 @@ WHERE laender.wkb_geometry IS NOT NULL
 AND a.jahr = %year%
 ORDER BY laender.id, wgi.jahr
 ```
+
+## 3.
+
+Das Dokument ist ein html Code mit diesem Inhalt:
+```
+<html>
+  <head>
+    <title>Geoserver GetFeatureInfo output</title>
+  </head>
+  <style type="text/css">
+	table.featureInfo, table.featureInfo td, table.featureInfo th {
+		border:1px solid #ddd;
+		border-collapse:collapse;
+		margin:0;
+		padding:0;
+		font-size: 90%;
+		padding:.2em .1em;
+	}
+	table.featureInfo th {
+	    padding:.2em .2em;
+		font-weight:bold;
+		background:#eee;
+	}
+	table.featureInfo td{
+		background:#fff;
+	}
+	table.featureInfo tr.odd td{
+		background:#eee;
+	}
+	table.featureInfo caption{
+		text-align:left;
+		font-size:100%;
+		font-weight:bold;
+		padding:.2em .2em;
+	}
+  </style>
+  <body>
+  
+<table class="featureInfo">
+  <caption class="featureInfo">exports_percent_gdp</caption>
+  <tr>
+  <th>fid</th>
+    <th >fid</th>
+    <th >iso3</th>
+    <th >jahr</th>
+    <th >value</th>
+    <th >value_text</th>
+    <th >land</th>
+    <th >wgi</th>
+  </tr>
+
+    <tr>
+
+  <td>exports_percent_gdp.43</td>    
+      <td>5297</td>
+      <td>DEU</td>
+      <td>2019</td>
+      <td>46.89291</td>
+      <td>47%</td>
+      <td>Deutschland</td>
+      <td>1.45686573783557</td>
+  </tr>
+</table>
+<br/>
+
+  </body>
+</html>
+```
+
+
