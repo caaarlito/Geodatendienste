@@ -222,3 +222,26 @@ Koordinaten der Bounding Box:
 ## 6.
 
 URL: http://localhost:8080/geoserver/gdd/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=gdd%3Aexports_percent_gdp&STYLES&LAYERS=gdd%3Aexports_percent_gdp&exceptions=application%2Fvnd.ogc.se_inimage&INFO_FORMAT=text%2Fhtml&FEATURE_COUNT=50&X=50&Y=50&SRS=EPSG%3A3857&WIDTH=101&HEIGHT=101&BBOX=652888.8293406211%2C5987030.898794127%2C1673556.9874144716%2C7372844.607748471
+
+## 7. 
+
+### 7a)
+
+Um den WMS bei QGIS einzuladen muss man unter Arbeitsbereiche, den gdd Arbeitsbereich bearbeiten und ein Häkchen bei "WMS" unter Services setzen.
+
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/be4c0ece-754b-4e11-a757-8894e6a1d7d2)
+
+Auf der Geoserver Startseite kann man nun unter "Geo Server Web Map Service" mit einem Klick auf 1.3.0 einen Link für den WMS kopieren, der dann bei QGIS eingetragen werden kann.
+
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/260671e0-15ca-4de1-8307-493809f68c35)
+
+Bei QGIS kann dann der WMS Service hinzugefügt werden.
+
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/2934e7ba-efbb-403e-9a2a-c2298a10b787)
+
+### 7b)
+
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/ed566560-587d-40eb-a115-7d89e52fdf3b)
+
+
+
