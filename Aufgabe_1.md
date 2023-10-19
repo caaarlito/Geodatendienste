@@ -121,3 +121,19 @@ AND (laender.id, wgi.jahr) IN (
     GROUP BY laender.id)
 ORDER BY laender.id, wgi.jahr
 ```
+
+## 3.
+
+SQL View: 
+```
+SELECT a.fid, a.iso3, a.jahr, a.value, 
+	(ROUND(a.value))::TEXT || '%' AS value_text, 
+	laender.id::INT, 
+	laender.land, laender.wkb_geometry, wgi.wgi
+FROM exports_percent_gdp AS a
+LEFT JOIN laender ON a.iso3 = laender.iso3
+LEFT JOIN wgi ON laender.id = wgi.landid AND a.jahr = wgi.jahr
+WHERE laender.wkb_geometry IS NOT NULL
+AND a.jahr = %year%
+ORDER BY laender.id, wgi.jahr
+```
