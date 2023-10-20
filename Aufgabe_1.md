@@ -241,4 +241,6 @@ http://localhost:8080/geoserver/gdd/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetCap
 
 ## 9.
 
+kein Plan
+
 ## 10.
