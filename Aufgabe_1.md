@@ -252,3 +252,90 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
 ![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/6bfee919-5984-4683-9bd0-631e77e4829c)
 
 ## 10.
+``` 
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Template taken from: http://docs.geoserver.org/stable/en/user/styling/sld/cookbook/polygons.html#attribute-based-polygon -->
+<sld:UserStyle xmlns="http://www.opengis.net/sld" xmlns:sld="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml">
+  <sld:Title/>
+  <FeatureTypeStyle>
+     <Rule>
+       <Name>high</Name>
+       <Title>WGI &lt; -0.5</Title>
+       <ogc:Filter>
+         <ogc:PropertyIsLessThan>
+           <ogc:PropertyName>wgi</ogc:PropertyName>
+           <ogc:Literal>-0.5</ogc:Literal>
+         </ogc:PropertyIsLessThan>
+       </ogc:Filter>
+       <PolygonSymbolizer>
+         <Fill>
+           <CssParameter name="fill">#fc8d59</CssParameter>
+         </Fill>
+       </PolygonSymbolizer>
+     </Rule>
+     <Rule>
+       <Name>medium</Name>
+       <Title>WGI &gt; -0.5 und &lt; 0.5</Title>
+       <ogc:Filter>
+         <ogc:And>
+           <ogc:PropertyIsGreaterThanOrEqualTo>
+             <ogc:PropertyName>wgi</ogc:PropertyName>
+             <ogc:Literal>-0.5</ogc:Literal>
+           </ogc:PropertyIsGreaterThanOrEqualTo>
+           <ogc:PropertyIsLessThan>
+             <ogc:PropertyName>wgi</ogc:PropertyName>
+             <ogc:Literal>0.5</ogc:Literal>
+           </ogc:PropertyIsLessThan>
+         </ogc:And>
+       </ogc:Filter>
+       <PolygonSymbolizer>
+         <Fill>
+           <CssParameter name="fill">#ffffbf</CssParameter>
+         </Fill>
+       </PolygonSymbolizer>
+     </Rule>
+     <Rule>
+       <Name>low</Name>
+       <Title>WGI &gt; 0.5</Title>
+       <ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>wgi</ogc:PropertyName>
+           <ogc:Literal>0.5</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+       <PolygonSymbolizer>
+         <Fill>
+           <CssParameter name="fill">#91cf60</CssParameter>
+         </Fill>
+       </PolygonSymbolizer>
+     </Rule>
+    <Rule>
+          <Title>Boundary</Title>
+          <LineSymbolizer>
+            <Stroke>
+              <CssParameter name="stroke-width">0.2</CssParameter>
+              <CssParameter name="stroke">#e2e2e2</CssParameter>
+            </Stroke>
+          </LineSymbolizer>
+          <TextSymbolizer>
+            <Label>
+              <ogc:PropertyName>land</ogc:PropertyName>
+            </Label>
+            <Font>
+              <CssParameter name="font-family">Times New Roman</CssParameter>
+              <CssParameter name="font-style">Normal</CssParameter>
+              <CssParameter name="font-size">14</CssParameter>
+            </Font>
+            <LabelPlacement>
+              <PointPlacement>
+                <AnchorPoint>
+                  <AnchorPointX>-0.5</AnchorPointX>
+                  <AnchorPointY>0.5</AnchorPointY>
+                </AnchorPoint>
+              </PointPlacement>
+            </LabelPlacement>
+          </TextSymbolizer>
+        </Rule>
+   </FeatureTypeStyle>
+</sld:UserStyle>
+```
