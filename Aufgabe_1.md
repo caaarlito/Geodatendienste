@@ -241,6 +241,14 @@ http://localhost:8080/geoserver/gdd/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetCap
 
 ## 9.
 
-kein Plan
+Die Eigenschaften im Bezug auf Abfragbarkeit und Deckungskraft lassen sich im Dokument unter dem Punkt layer finden.
+
+``` <Layer queryable="1" opaque="0"> ```
+
+Queryable steht dabei für die Abfragbarkeit (1 = abfragbar/0 = nicht abfragbar) und Opaque (1 = undurchsichtig/0 = durchsichtig) für die Deckungskraft.
+
+Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese beiden WEigenschaften für den Layer einstellen.
+
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/6bfee919-5984-4683-9bd0-631e77e4829c)
 
 ## 10.
