@@ -273,6 +273,7 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
          </Fill>
        </PolygonSymbolizer>
      </Rule>
+    
      <Rule>
        <Name>medium</Name>
        <Title>WGI &gt; -0.5 und &lt; 0.5</Title>
@@ -294,6 +295,7 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
          </Fill>
        </PolygonSymbolizer>
      </Rule>
+    
      <Rule>
        <Name>low</Name>
        <Title>WGI &gt; 0.5</Title>
@@ -309,7 +311,8 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
          </Fill>
        </PolygonSymbolizer>
      </Rule>
-    <Rule>
+    
+     <Rule>
           <Title>Boundary</Title>
           <LineSymbolizer>
             <Stroke>
@@ -341,6 +344,171 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
             </LabelPlacement>
           </TextSymbolizer>
         </Rule>
+    
+    
+    <Rule>
+       <Name>high</Name>
+       <Title>Exporte &lt; 20% vom BSP</Title>
+       <ogc:Filter>
+         <ogc:PropertyIsLessThan>
+           <ogc:PropertyName>value</ogc:PropertyName>
+           <ogc:Literal>20</ogc:Literal>
+         </ogc:PropertyIsLessThan>
+       </ogc:Filter>
+       <TextSymbolizer>
+            <Geometry>
+              <ogc:Function name="centroid">
+                <ogc:PropertyName>wkb_geometry</ogc:PropertyName>
+              </ogc:Function>
+            </Geometry>
+            <Label>
+              <ogc:PropertyName>value_text</ogc:PropertyName>
+            </Label>
+            <Font>
+              <CssParameter name="font-family">Arial</CssParameter>
+              <CssParameter name="font-style">Bold</CssParameter>
+              <CssParameter name="font-size">6</CssParameter>
+              <CssParameter name="fill">#e2e2e2</CssParameter>
+            </Font>
+            <LabelPlacement>
+              <PointPlacement>
+                <AnchorPoint>
+                  <AnchorPointX>0.5</AnchorPointX>
+                  <AnchorPointY>0.5</AnchorPointY>
+                </AnchorPoint>
+              </PointPlacement>
+            </LabelPlacement>
+          </TextSymbolizer>
+      	<PointSymbolizer>
+         <Geometry>
+          <ogc:Function name="centroid">
+           <ogc:PropertyName>land</ogc:PropertyName>
+          </ogc:Function>
+     	 </Geometry>
+		 <Graphic>
+ 		  <Mark>
+ 		   <WellKnownName>circle</WellKnownName>
+            <Fill>
+             <CssParameter name="fill">#0033CC</CssParameter>
+        	</Fill>
+      	  </Mark>
+      		<Size>10</Size>
+		 </Graphic>
+		</PointSymbolizer>
+     </Rule>
+    
+     <Rule>
+       <Name>medium</Name>
+       <Title>Exporte 20-40% vom BSP</Title>
+       <ogc:Filter>
+         <ogc:And>
+           <ogc:PropertyIsGreaterThanOrEqualTo>
+             <ogc:PropertyName>value</ogc:PropertyName>
+             <ogc:Literal>20</ogc:Literal>
+           </ogc:PropertyIsGreaterThanOrEqualTo>
+           <ogc:PropertyIsLessThan>
+             <ogc:PropertyName>value</ogc:PropertyName>
+             <ogc:Literal>40</ogc:Literal>
+           </ogc:PropertyIsLessThan>
+         </ogc:And>
+       </ogc:Filter>
+       <TextSymbolizer>
+            <Geometry>
+              <ogc:Function name="centroid">
+                <ogc:PropertyName>wkb_geometry</ogc:PropertyName>
+              </ogc:Function>
+            </Geometry>
+            <Label>
+              <ogc:PropertyName>value_text</ogc:PropertyName>
+            </Label>
+            <Font>
+              <CssParameter name="font-family">Arial</CssParameter>
+              <CssParameter name="font-style">Bold</CssParameter>
+              <CssParameter name="font-size">10</CssParameter>
+              <CssParameter name="fill">#e2e2e2</CssParameter>
+            </Font>
+            <LabelPlacement>
+              <PointPlacement>
+                <AnchorPoint>
+                  <AnchorPointX>0.5</AnchorPointX>
+                  <AnchorPointY>0.5</AnchorPointY>
+                </AnchorPoint>
+              </PointPlacement>
+            </LabelPlacement>
+          </TextSymbolizer>
+      	<PointSymbolizer>
+         <Geometry>
+          <ogc:Function name="centroid">
+           <ogc:PropertyName>land</ogc:PropertyName>
+          </ogc:Function>
+     	 </Geometry>
+		 <Graphic>
+ 		  <Mark>
+ 		   <WellKnownName>circle</WellKnownName>
+            <Fill>
+             <CssParameter name="fill">#0033CC</CssParameter>
+        	</Fill>
+      	  </Mark>
+      		<Size>20</Size>
+		 </Graphic>
+		</PointSymbolizer>
+     </Rule>
+    
+     <Rule>
+       <Name>low</Name>
+       <Title>Exporte &gt; 40% vom BSP</Title>
+       <ogc:Filter>
+         <ogc:PropertyIsGreaterThan>
+           <ogc:PropertyName>value</ogc:PropertyName>
+           <ogc:Literal>40</ogc:Literal>
+         </ogc:PropertyIsGreaterThan>
+       </ogc:Filter>
+       <TextSymbolizer>
+         <Fill>
+           <CssParameter name="fill">#91cf60</CssParameter>
+         </Fill>
+       </TextSymbolizer>
+       <TextSymbolizer>
+            <Geometry>
+              <ogc:Function name="centroid">
+                <ogc:PropertyName>wkb_geometry</ogc:PropertyName>
+              </ogc:Function>
+            </Geometry>
+            <Label>
+              <ogc:PropertyName>value_text</ogc:PropertyName>
+            </Label>
+            <Font>
+              <CssParameter name="font-family">Arial</CssParameter>
+              <CssParameter name="font-style">Bold</CssParameter>
+              <CssParameter name="font-size">14</CssParameter>
+              <CssParameter name="fill">#e2e2e2</CssParameter>
+            </Font>
+            <LabelPlacement>
+              <PointPlacement>
+                <AnchorPoint>
+                  <AnchorPointX>0.5</AnchorPointX>
+                  <AnchorPointY>0.5</AnchorPointY>
+                </AnchorPoint>
+              </PointPlacement>
+            </LabelPlacement>
+          </TextSymbolizer>
+      	<PointSymbolizer>
+         <Geometry>
+          <ogc:Function name="centroid">
+           <ogc:PropertyName>land</ogc:PropertyName>
+          </ogc:Function>
+     	 </Geometry>
+		 <Graphic>
+ 		  <Mark>
+ 		   <WellKnownName>circle</WellKnownName>
+            <Fill>
+             <CssParameter name="fill">#0033CC</CssParameter>
+        	</Fill>
+      	  </Mark>
+      		<Size>35</Size>
+		 </Graphic>
+		</PointSymbolizer>
+     </Rule>
    </FeatureTypeStyle>
 </sld:UserStyle>
 ```
