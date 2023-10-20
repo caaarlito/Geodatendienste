@@ -77,29 +77,19 @@ psql -h localhost -p 5432 -U gdd -d gdd -c "\COPY exports_percent_gdp(fid, iso3,
 ```
 
 
-## 2 -> fehlt
-```
-SELECT a.value, a.iso3, a.jahr, a.value, b.wkb_geometry AS geom 
-FROM exports_percent_gdp AS a, laender AS b, wgi AS c 
-WHERE a.iso3 = b.iso3 and b.id = c.landid 
-AND a.jahr = c.jahr AND b.wkb_geometry IS NOT null
-
-AND a.jahr = (SELECT DISTINCT ON (landid) jahr FROM wgi ORDER BY landid, jahr DESC);
-```
+## 2.
 
 ```
-SELECT
-    wgi.landid,
-    MAX(wgi.jahr) AS aktuellstes_jahr,
-    (
-        SELECT wgi
-        FROM wgi AS inner_wgi
-        WHERE inner_wgi.landid = wgi.landid
-        AND inner_wgi.jahr = MAX(wgi.jahr)
-    ) AS aktuellstes_wgi
-FROM wgi
-GROUP BY landid
-ORDER BY landid, aktuellstes_jahr;
+SELECT a.fid, a.iso3, a.jahr, a.value, 
+	(ROUND(a.value))::TEXT || '%' AS value_text, 
+	laender.id::INT, 
+	laender.land, laender.wkb_geometry, wgi.wgi
+FROM exports_percent_gdp AS a
+LEFT JOIN laender ON a.iso3 = laender.iso3
+LEFT JOIN wgi ON laender.id = wgi.landid AND a.jahr = wgi.jahr
+WHERE laender.wkb_geometry IS NOT NULL
+AND a.jahr = (SELECT MAX(jahr)FROM wgi)
+ORDER BY laender.id, wgi.jahr;
 ```
 Eventuell Richtig? -> 187 Zeilen
 ```
@@ -249,3 +239,6 @@ Beim Einladen des Layers muss nun noch beachtet werden, dass das CRS auf EPSG: 3
 
 http://localhost:8080/geoserver/gdd/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetCapabilities
 
+## 9.
+
+## 10.
