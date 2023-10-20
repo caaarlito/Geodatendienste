@@ -368,8 +368,7 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
               <CssParameter name="font-family">Arial</CssParameter>
               <CssParameter name="font-style">Bold</CssParameter>
               <CssParameter name="font-size">6</CssParameter>
-              <CssParameter name="fill">#e2e2e2</CssParameter>
-            </Font>
+             </Font>
             <LabelPlacement>
               <PointPlacement>
                 <AnchorPoint>
@@ -378,22 +377,25 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
                 </AnchorPoint>
               </PointPlacement>
             </LabelPlacement>
+          	<Fill>
+              <CssParameter name="fill">#e2e2e2</CssParameter>
+          	</Fill>
           </TextSymbolizer>
       	<PointSymbolizer>
          <Geometry>
           <ogc:Function name="centroid">
-           <ogc:PropertyName>land</ogc:PropertyName>
+           <ogc:PropertyName>wkb_geometry</ogc:PropertyName>
           </ogc:Function>
      	 </Geometry>
-	 <Graphic>
+ 	 <Graphic>
 	  <Mark>
 	   <WellKnownName>circle</WellKnownName>
-            <Fill>
-             <CssParameter name="fill">#0033CC</CssParameter>
-	    </Fill>
+	   <Fill>
+	    <CssParameter name="fill">#0033CC</CssParameter>
+	   </Fill>
       	  </Mark>
-	   <Size>10</Size>
-         </Graphic>
+	  <Size>10</Size>
+	 </Graphic>
 	</PointSymbolizer>
      </Rule>
     
@@ -425,7 +427,6 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
               <CssParameter name="font-family">Arial</CssParameter>
               <CssParameter name="font-style">Bold</CssParameter>
               <CssParameter name="font-size">10</CssParameter>
-              <CssParameter name="fill">#e2e2e2</CssParameter>
             </Font>
             <LabelPlacement>
               <PointPlacement>
@@ -435,17 +436,20 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
                 </AnchorPoint>
               </PointPlacement>
             </LabelPlacement>
+         	<Fill>
+              <CssParameter name="fill">#e2e2e2</CssParameter>
+            </Fill>
           </TextSymbolizer>
       	<PointSymbolizer>
          <Geometry>
           <ogc:Function name="centroid">
-           <ogc:PropertyName>land</ogc:PropertyName>
+           <ogc:PropertyName>wkb_geometry</ogc:PropertyName>
           </ogc:Function>
      	 </Geometry>
 	 <Graphic>
 	  <Mark>
 	   <WellKnownName>circle</WellKnownName>
-            <Fill>
+	    <Fill>
              <CssParameter name="fill">#0033CC</CssParameter>
 	    </Fill>
       	  </Mark>
@@ -481,7 +485,6 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
               <CssParameter name="font-family">Arial</CssParameter>
               <CssParameter name="font-style">Bold</CssParameter>
               <CssParameter name="font-size">14</CssParameter>
-              <CssParameter name="fill">#e2e2e2</CssParameter>
             </Font>
             <LabelPlacement>
               <PointPlacement>
@@ -491,21 +494,24 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
                 </AnchorPoint>
               </PointPlacement>
             </LabelPlacement>
+         	<Fill>
+              <CssParameter name="fill">#e2e2e2</CssParameter>
+            </Fill>
           </TextSymbolizer>
       	<PointSymbolizer>
          <Geometry>
           <ogc:Function name="centroid">
-           <ogc:PropertyName>land</ogc:PropertyName>
+           <ogc:PropertyName>wkb_geometry</ogc:PropertyName>
           </ogc:Function>
      	 </Geometry>
 	 <Graphic>
 	  <Mark>
 	   <WellKnownName>circle</WellKnownName>
-	    <Fill>
+            <Fill>
              <CssParameter name="fill">#0033CC</CssParameter>
 	    </Fill>
       	  </Mark>
-	  <Size>35</Size>
+	   <Size>35</Size>
 	 </Graphic>
 	</PointSymbolizer>
      </Rule>
