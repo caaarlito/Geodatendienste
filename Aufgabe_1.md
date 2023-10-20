@@ -530,3 +530,9 @@ Die minimalen Required Parameters sind Request, Layer und Format.
 URL: ``` http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&LAYER=gdd:exports_percent_gdp ```
 
 ![image](https://github.com/caaarlito/Geodatendienste/assets/147136715/8db3b8a4-c8f5-45b5-8873-b052de945e11)
+
+## 12. 
+
+Um den SQL View Parameter zu ändern, muss man ``` &viewparams=year:2020 ``` anhängen.
+
+URL: http://localhost:8080/geoserver/gdd/wms?service=WMS&version=1.1.0&request=GetMap&layers=gdd%3Aexports_percent_gdp&bbox=-2.0037508342789244E7%2C-7538976.357111702%2C2.003750838011201E7%2C1.7926778564476732E7&width=768&height=488&srs=EPSG%3A3857&styles=&format=application/openlayers&viewparams=year:2000
