@@ -318,6 +318,11 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
             </Stroke>
           </LineSymbolizer>
           <TextSymbolizer>
+            <Geometry>
+              <ogc:Function name="centroid">
+                <ogc:PropertyName>wkb_geometry</ogc:PropertyName>
+              </ogc:Function>
+            </Geometry>
             <Label>
               <ogc:PropertyName>land</ogc:PropertyName>
             </Label>
