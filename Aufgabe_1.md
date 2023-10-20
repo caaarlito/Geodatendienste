@@ -176,6 +176,7 @@ Das Dokument ist ein HTML-Code mit diesem Inhalt:
   </body>
 </html>
 ```
+Es enthält durch die GetFeature Anfrage die Attribute des angeklickten Landes/Feature/Objektes.
 
 ## 4.
 
