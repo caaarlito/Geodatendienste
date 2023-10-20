@@ -519,4 +519,8 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
 </sld:UserStyle>
 ```
 
+Ergebnis:
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/7e2994e7-d35d-4772-9fb8-eb5fbd098d38)
+
+
 ## 11.
