@@ -529,3 +529,4 @@ Die minimalen Required Parameters sind Request, Layer und Format.
 
 URL: ``` http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&LAYER=gdd:exports_percent_gdp ```
 
+![image](https://github.com/caaarlito/Geodatendienste/assets/147136715/8db3b8a4-c8f5-45b5-8873-b052de945e11)
