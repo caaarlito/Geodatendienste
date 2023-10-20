@@ -239,9 +239,13 @@ Bei QGIS kann dann der WMS Service hinzugefügt werden.
 
 ![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/2934e7ba-efbb-403e-9a2a-c2298a10b787)
 
+BEim Einladen des Layers muss nun noch beachtet werden, dass das CRS auf EPSG: 3857 gestellt wird.
+
 ### 7b)
 
-![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/ed566560-587d-40eb-a115-7d89e52fdf3b)
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/8d71f0e4-b38f-4f8b-9247-415aaa47f119)
+
+## 8. 
 
 
 
