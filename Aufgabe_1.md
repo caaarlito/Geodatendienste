@@ -95,7 +95,7 @@ AND a.jahr = (SELECT MAX(jahr)FROM wgi)
 ORDER BY laender.id, wgi.jahr;
 ```
 
-SQL View für Geoserver: 
+SQL View für Geoserver mit dem Parameter: 
 ```
 SELECT a.fid, a.iso3, a.jahr, a.value, 
 	(ROUND(a.value))::TEXT || '%' AS value_text, 
