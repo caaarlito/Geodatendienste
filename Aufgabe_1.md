@@ -385,16 +385,16 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
            <ogc:PropertyName>land</ogc:PropertyName>
           </ogc:Function>
      	 </Geometry>
-		 <Graphic>
- 		  <Mark>
- 		   <WellKnownName>circle</WellKnownName>
+	 <Graphic>
+	  <Mark>
+	   <WellKnownName>circle</WellKnownName>
             <Fill>
              <CssParameter name="fill">#0033CC</CssParameter>
-        	</Fill>
+	    </Fill>
       	  </Mark>
-      		<Size>10</Size>
-		 </Graphic>
-		</PointSymbolizer>
+	   <Size>10</Size>
+         </Graphic>
+	</PointSymbolizer>
      </Rule>
     
      <Rule>
@@ -442,16 +442,16 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
            <ogc:PropertyName>land</ogc:PropertyName>
           </ogc:Function>
      	 </Geometry>
-		 <Graphic>
- 		  <Mark>
- 		   <WellKnownName>circle</WellKnownName>
+	 <Graphic>
+	  <Mark>
+	   <WellKnownName>circle</WellKnownName>
             <Fill>
              <CssParameter name="fill">#0033CC</CssParameter>
-        	</Fill>
+	    </Fill>
       	  </Mark>
-      		<Size>20</Size>
-		 </Graphic>
-		</PointSymbolizer>
+	   <Size>20</Size>
+	 </Graphic>
+	</PointSymbolizer>
      </Rule>
     
      <Rule>
@@ -498,16 +498,16 @@ Im Geoserver kann man unter "Layer bearbeiten" im Reiter "Publizierung" diese be
            <ogc:PropertyName>land</ogc:PropertyName>
           </ogc:Function>
      	 </Geometry>
-		 <Graphic>
- 		  <Mark>
- 		   <WellKnownName>circle</WellKnownName>
-            <Fill>
+	 <Graphic>
+	  <Mark>
+	   <WellKnownName>circle</WellKnownName>
+	    <Fill>
              <CssParameter name="fill">#0033CC</CssParameter>
-        	</Fill>
+	    </Fill>
       	  </Mark>
-      		<Size>35</Size>
-		 </Graphic>
-		</PointSymbolizer>
+	  <Size>35</Size>
+	 </Graphic>
+	</PointSymbolizer>
      </Rule>
    </FeatureTypeStyle>
 </sld:UserStyle>
