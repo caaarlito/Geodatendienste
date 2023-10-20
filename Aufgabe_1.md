@@ -1,5 +1,6 @@
-# Geodatendienste
+# Geodatendienste WiSe 2023/24
 ## Aufgabe 1: WMS
+*Abgabe von Luca Emden-Weinert und Carlo Persicke*
 
 ### 1. 
 
