@@ -41,6 +41,8 @@ var map = new ol.Map({
   })
 });
 ```
+
+
 # OpenLayers 2)
 ## 2a)
 Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahmen in die Breite des Elements mit einbezogen werden.
@@ -82,6 +84,8 @@ Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahme
 	font-size: 100%; /* Fontgröße */
 }
 ```
+
+
 ## 2c)
 ```
 /* Definiert die Animation mit dem Namen "myAnimation" */
@@ -113,6 +117,8 @@ Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahme
   /* 2 = Anzahl der Wiederholungen der Animation */
 }
 ```
+
+
 ## 2d)
 ### Erweiterung wms.html
 ```
@@ -139,6 +145,8 @@ function unhover() {
 	element.style.fontWeight = 'normal'; // Setzt den Schriftstil zurück auf "normal"
 }
 ```
+
+
 # OpenLayers 3) <- unklar?
 In OpenLayers können Sie einen Web Map Service (WMS) als zusätzliche Karte in das map-Objekt einbinden. Dafür würden Sie einen neuen Layer von Typ ol.layer.Tile erstellen und diesen mit einer ol.source.TileWMS Quelle konfigurieren. Im folgenden Code-Snippet sehen Sie, wie Sie die WMS-Erweiterung in Ihrer JavaScript-Datei integrieren könnten:
 ```
@@ -167,6 +175,8 @@ var map = new ol.Map({
 ```
 In diesem Beispiel habe ich eine Variable namens wmsLayer erstellt, die den neuen WMS-Layer repräsentiert. Ich habe diesen Layer dann dem Array der layers-Option in Ihrem map-Objekt hinzugefügt.
 Bitte beachten Sie, dass Sie die Platzhalter wie 'Ihr WMS Titel', 'Ihre WMS URL' und 'Ihre Layer' durch die tatsächlichen Werte ersetzen müssen, die für Ihren spezifischen WMS-Dienst gelten. (ChatGPT)
+
+
 # OpenLayers 4) <- unklar?
 Sie können die Legende als Bilddatei in Ihr HTML-Dokument einbinden, indem Sie ein neues <div> mit der id="legend" und der class="legend" erstellen. Innerhalb dieses Divs können Sie dann einen Paragraphen (<p>) und ein Bild (<img>) hinzufügen, wobei die src-Eigenschaft des Bildes die URL Ihrer GetLegendGraphic enthält.
 Hier ist ein Beispiel für die HTML-Erweiterung:
@@ -174,7 +184,7 @@ Hier ist ein Beispiel für die HTML-Erweiterung:
 <!-- Neue Div für die Legende -->
 <div id="legend" class="legend">
   <p>Legende</p>
-  <img src="Ihre_GetLegendGraphic_URL" alt="Kartenlegende">
+  <img src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&LAYER=gdd:exports_percent_gdp" alt="Kartenlegende">
 </div>
 ```
 Ersetzen Sie "Ihre_GetLegendGraphic_URL" durch die tatsächliche URL, die die GetLegendGraphic enthält.
