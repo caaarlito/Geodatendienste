@@ -165,11 +165,11 @@ function unhover() {
 In OpenLayers können Sie einen Web Map Service (WMS) als zusätzliche Karte in das map-Objekt einbinden. Dafür würden Sie einen neuen Layer von Typ ol.layer.Tile erstellen und diesen mit einer ol.source.TileWMS Quelle konfigurieren. Im folgenden Code-Snippet sehen Sie, wie Sie die WMS-Erweiterung in Ihrer JavaScript-Datei integrieren könnten:
 ```
 var wmsLayer = new ol.layer.Tile({
-  title: 'Ihr WMS Titel',  // Optional: Titel des Layers
+  title: 'gdd',  // Titel des Layers
   source: new ol.source.TileWMS({
-    url: 'Ihre WMS URL', // URL des WMS-Services
-    params: {'LAYERS': 'Ihre Layer', 'TILED': true}, // zusätzliche Parameter
-    serverType: 'geoserver'  // oder der Typ Ihres WMS-Servers
+    url: 'http://localhost:8080/geoserver/gdd/wms?VERSION=1.1.1', // URL des WMS-Services
+    params: {'LAYERS': 'gdd', 'TILED': true}, // zusätzliche Parameter
+    serverType: 'geoserver'  // Typ des WMS-Servers
   })
 });
 
