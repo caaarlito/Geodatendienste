@@ -192,18 +192,21 @@ Bitte beachten Sie, dass Sie die Platzhalter wie 'Ihr WMS Titel', 'Ihre WMS URL'
 
 
 ### 4. <- unklar?
-Sie können die Legende als Bilddatei in Ihr HTML-Dokument einbinden, indem Sie ein neues <div> mit der id="legend" und der class="legend" erstellen. Innerhalb dieses Divs können Sie dann einen Paragraphen (<p>) und ein Bild (<img>) hinzufügen, wobei die src-Eigenschaft des Bildes die URL Ihrer GetLegendGraphic enthält.
-Hier ist ein Beispiel für die HTML-Erweiterung:
+
+Ergänzung der wms.html unter div Map:
+
 ```
-<!-- Neue Div für die Legende -->
 <div id="legend" class="legend">
   <p>Legende</p>
   <img src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&LAYER=gdd:exports_percent_gdp" alt="Kartenlegende">
 </div>
 ```
-Ersetzen Sie "Ihre_GetLegendGraphic_URL" durch die tatsächliche URL, die die GetLegendGraphic enthält.
-So fügen Sie die Legende in Form einer Bilddatei zu Ihrem HTML-Dokument hinzu. (ChatGPT)
-### 5. und 6.
+
+### 5.
+
+Damit die Legende rechts neben der Karte auftauchen kann, bekommt die `Display` Eigenschaft der Map den Wert `inline-block`.
+
+### 6.
 ```
 .map {
   height: 400px;
