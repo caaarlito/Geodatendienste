@@ -47,7 +47,7 @@ var map = new ol.Map({
 ```
 
 
-###2.
+### 2.
 #### 2a)
 Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahmen in die Breite des Elements mit einbezogen werden.
 #### 2b)
