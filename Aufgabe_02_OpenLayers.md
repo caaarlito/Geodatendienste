@@ -167,8 +167,8 @@ In OpenLayers können Sie einen Web Map Service (WMS) als zusätzliche Karte in 
 var wmsLayer = new ol.layer.Tile({
   title: 'gdd',  // Titel des Layers
   source: new ol.source.TileWMS({
-    url: 'http://localhost:8080/geoserver/gdd/wms?VERSION=1.1.1', // URL des WMS-Services
-    params: {'LAYERS': 'gdd', 'TILED': true}, // zusätzliche Parameter
+    url: 'http://localhost:8080/geoserver/gdd/wms', // URL des WMS-Services
+    params: {'LAYERS': 'gdd', 'TILED': true, 'VERSION': '1.1.1'}, // zusätzliche Parameter
     serverType: 'geoserver'  // Typ des WMS-Servers
   })
 });
