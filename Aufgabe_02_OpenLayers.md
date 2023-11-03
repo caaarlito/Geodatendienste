@@ -58,7 +58,8 @@ Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahme
 
 #### 2b)
 
-### Änderung in wms.html
+**Änderung in wms.html:**
+
 ```
 	<body>
 		<div id="heading" class="heading">
@@ -70,7 +71,9 @@ Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahme
 		<script src="wms.js" type="text/javascript"></script>
 	</body>
 ```
-### Änderung in wms.css
+
+**Änderung in wms.css:**
+
 ```
 .heading {
 	box-sizing: border-box; /* Inkludiert Padding und Rahmen in die Gesamtbreite */
@@ -96,8 +99,8 @@ Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahme
 }
 ```
 
-
 #### 2c)
+
 ```
 /* Definiert die Animation mit dem Namen "myAnimation" */
 @keyframes myAnimation {
