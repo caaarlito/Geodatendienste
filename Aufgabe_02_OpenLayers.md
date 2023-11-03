@@ -64,7 +64,7 @@ Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahme
 	<body>
 		<div id="heading" class="heading">
 			<span class="title">Geodatendienste</span>
-			<span class="student">powered by: <a href="wms.html">Luca</a></span>
+			<span class="student">powered by: <a href="wms.html">Luca und Carlo</a></span>
 		</div>
 		<p/>
 		<div id="map" class="map"></div>
