@@ -136,7 +136,7 @@ Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahme
 #### 2d)
 ### Erweiterung wms.html
 ```
-<span class="student" onmouseover="hover()" onmouseout="unhover()">powered by: <a href="wms.html">Luca</a></span>
+<span class="student" onmouseover="hover()" onmouseout="unhover()">powered by: <a href="wms.html">Luca und Carlo</a></span>
 ```
 ### Erweiterung wms.js
 ```
