@@ -1,4 +1,8 @@
-# OpenLayers 1)
+# Geodatendienste WiSe 2023/24
+## Aufgabe 2: Open Layers
+*Abgabe von Luca Emden-Weinert und Carlo Persicke*
+
+### 1. 
 ## wms.html
 ```
 <!doctype html>
@@ -43,10 +47,10 @@ var map = new ol.Map({
 ```
 
 
-# OpenLayers 2)
-## 2a)
+###2.
+#### 2a)
 Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahmen in die Breite des Elements mit einbezogen werden.
-## 2b)
+#### 2b)
 ### Änderung in wms.html
 ```
 	<body>
@@ -86,7 +90,7 @@ Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahme
 ```
 
 
-## 2c)
+#### 2c)
 ```
 /* Definiert die Animation mit dem Namen "myAnimation" */
 @keyframes myAnimation {
@@ -119,7 +123,7 @@ Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahme
 ```
 
 
-## 2d)
+#### 2d)
 ### Erweiterung wms.html
 ```
 <span class="student" onmouseover="hover()" onmouseout="unhover()">powered by: <a href="wms.html">Luca</a></span>
@@ -147,7 +151,7 @@ function unhover() {
 ```
 
 
-# OpenLayers 3) <- unklar?
+### 3. <- unklar?
 In OpenLayers können Sie einen Web Map Service (WMS) als zusätzliche Karte in das map-Objekt einbinden. Dafür würden Sie einen neuen Layer von Typ ol.layer.Tile erstellen und diesen mit einer ol.source.TileWMS Quelle konfigurieren. Im folgenden Code-Snippet sehen Sie, wie Sie die WMS-Erweiterung in Ihrer JavaScript-Datei integrieren könnten:
 ```
 var wmsLayer = new ol.layer.Tile({
@@ -177,7 +181,7 @@ In diesem Beispiel habe ich eine Variable namens wmsLayer erstellt, die den neue
 Bitte beachten Sie, dass Sie die Platzhalter wie 'Ihr WMS Titel', 'Ihre WMS URL' und 'Ihre Layer' durch die tatsächlichen Werte ersetzen müssen, die für Ihren spezifischen WMS-Dienst gelten. (ChatGPT)
 
 
-# OpenLayers 4) <- unklar?
+### 4. <- unklar?
 Sie können die Legende als Bilddatei in Ihr HTML-Dokument einbinden, indem Sie ein neues <div> mit der id="legend" und der class="legend" erstellen. Innerhalb dieses Divs können Sie dann einen Paragraphen (<p>) und ein Bild (<img>) hinzufügen, wobei die src-Eigenschaft des Bildes die URL Ihrer GetLegendGraphic enthält.
 Hier ist ein Beispiel für die HTML-Erweiterung:
 ```
@@ -189,7 +193,7 @@ Hier ist ein Beispiel für die HTML-Erweiterung:
 ```
 Ersetzen Sie "Ihre_GetLegendGraphic_URL" durch die tatsächliche URL, die die GetLegendGraphic enthält.
 So fügen Sie die Legende in Form einer Bilddatei zu Ihrem HTML-Dokument hinzu. (ChatGPT)
-# OpenLayers 5) und 6)
+### 5. und 6.
 ```
 .map {
   height: 400px;
