@@ -3,26 +3,29 @@
 *Abgabe von Luca Emden-Weinert und Carlo Persicke*
 
 ### 1. 
-## wms.html
+
+**wms.html:**
+
 ```
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css" type="text/css">
-    <!-- Verlinkung Ihrer eigenen CSS-Datei -->
-    <link rel="stylesheet" href="wms.css" type="text/css">
+    <link rel="stylesheet" href="wms.css">
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
     <title>My first viewer</title>
   </head>
   <body>
     <h2>Geodatendienste</h2>
     <div id="map" class="map"></div>
-    <script src="wms.js" type="text/javascript"></script>
+    <script type="text/javascript" src="wms.js"></script>
   </body>
 </html>
 ```
-## wms.css
+
+**wms.css:**
+
 ```
 /* styles.css */
 .map {
@@ -30,7 +33,9 @@
   width:100%;
 }
 ```
-## wms.js
+
+**wms.js:**
+
 ```
 var map = new ol.Map({
   target: 'map',
@@ -46,11 +51,14 @@ var map = new ol.Map({
 });
 ```
 
-
 ### 2.
+
 #### 2a)
+
 Die `box-sizing`-Eigenschaft `border-box` ermöglicht es, dass Padding und Rahmen in die Breite des Elements mit einbezogen werden.
+
 #### 2b)
+
 ### Änderung in wms.html
 ```
 	<body>
