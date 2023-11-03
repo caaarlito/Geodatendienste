@@ -27,7 +27,6 @@
 **wms.css:**
 
 ```
-/* styles.css */
 .map {
   height: 400px;
   width:100%;
