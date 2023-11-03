@@ -188,7 +188,7 @@ var map = new ol.Map({
 	  
 ```
 
-### 4. <- unklar?
+### 4. 
 
 Ergänzung der wms.html unter div Map:
 
