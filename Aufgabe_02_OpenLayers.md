@@ -227,7 +227,7 @@ p {
 
 ### 7.
 
-Damit diese Abfrage klappt, mussten wir im web.xml File des Geoservers einen Cors-Filter hinzufügen:
+Damit die Abfrage funktioniert, mussten wir bei uns im web.xml File des Geoservers einen Cors-Filter hinzufügen:
 ```
 <filter>
     <filter-name>CorsFilter</filter-name>
@@ -337,7 +337,7 @@ map.on('singleclick', function (evt) {
 
 ### 8. 
 
-Hierbei tauscht man das ``singleclick`` Event einfach durch das ``pointermove`` Event.
+Hierbei tauscht man das ``singleclick`` Event einfach durch das ``pointermove`` Event:
 
 ```
 map.on('pointermove', function (evt) {
