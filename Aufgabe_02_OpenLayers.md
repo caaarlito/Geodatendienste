@@ -337,9 +337,26 @@ map.on('singleclick', function (evt) {
 
 ### 8. 
 
-```
-code
+Hierbei tauscht man das ``singleclick`` Event einfach durch das ``pointermove`` Event.
 
+```
+map.on('pointermove', function (evt) {
+  document.getElementById('gfi').innerHTML = '';
+  const viewResolution = (view.getResolution());
+  const url = wmsLayer.getSource().getFeatureInfoUrl(
+    evt.coordinate,
+    viewResolution,
+    'EPSG:3857',
+    {'INFO_FORMAT': 'text/html'}
+  );
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById('gfi').innerHTML = html;
+      });
+  }
+});
 ```
 
 ### Screenshot der Website
