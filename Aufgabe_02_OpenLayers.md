@@ -359,7 +359,7 @@ map.on('pointermove', function (evt) {
 });
 ```
 
-### Screenshot der Website
+### Screenshot der fertigen Website
 
 ![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/837ab83c-b6ee-4ae6-93cd-d032218af56d)
 
