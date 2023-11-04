@@ -227,8 +227,112 @@ p {
 
 ### 7.
 
+Damit diese Abfrage klappt, mussten wir im web.xml File des Geoservers einen Cors-Filter hinzufügen:
 ```
-code
+<filter>
+    <filter-name>CorsFilter</filter-name>
+    <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>CorsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+```
+
+**Neuer wms.html Code:**
+
+```
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="wms.css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
+    <title>My first viewer</title>
+  </head>
+  <body>
+	<div id="heading" class="heading">
+		<span class="title">Geodatendienste</span>
+		<span class="student" onmouseover="hover()" onmouseout="unhover()">powered by:<a href="wms.html">Luca und Carlo</a></span>
+	</div>
+	<p/>
+    <div id="map" class="map"></div>
+	<div id="legend" class="legend">
+		<p>Legende</p>
+		<img src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&LAYER=gdd:exports_percent_gdp">
+	</div>
+	<div id="gfi" class="gfi"></div>
+	<script type="text/javascript" src="wms.js"></script>
+  </body>
+</html>
+```
+
+**Neuer wms.js Code:**
+
+```
+ var wmsLayer = new ol.layer.Tile({
+  title: 'WMS Layer',  
+  source: new ol.source.TileWMS({
+    url: 'http://localhost:8080/geoserver/gdd/wms',
+    params: {
+      'LAYERS': 'gdd:exports_percent_gdp',
+      'TILED': true,
+      'VERSION': '1.1.1'
+    },
+    serverType: 'geoserver' 
+  })
+});
+
+var view = new ol.View({
+  center: ol.proj.fromLonLat([13, 52]),
+  zoom: 4
+});
+
+var map = new ol.Map({
+  target: 'map',
+  layers: [
+    
+    wmsLayer  // Hinzufügen des WMS-Layers
+  ],
+  view: view  // Hinzufügen des Views
+});
+
+function hover() {
+	// Zugriff auf das Element mit der Klasse "student"
+	var element = document.querySelector('.student');
+
+	// Änderung der Schriftgröße und des Schriftgewichts
+	element.style.fontSize = '200%'; // Verdoppelt die Schriftgröße
+	element.style.fontWeight = 'bold'; // Setzt den Schriftstil auf "bold"
+}
+
+function unhover() {
+	// Zugriff auf das Element mit der Klasse "student"
+	var element = document.querySelector('.student');
+
+	// Zurücksetzen der Schriftgröße und des Schriftgewichts
+	element.style.fontSize = '100%'; // Setzt die Schriftgröße zurück
+	element.style.fontWeight = 'normal'; // Setzt den Schriftstil zurück auf "normal"
+}
+
+map.on('singleclick', function (evt) {
+  document.getElementById('gfi').innerHTML = '';
+  const viewResolution = (view.getResolution());
+  const url = wmsLayer.getSource().getFeatureInfoUrl(
+    evt.coordinate,
+    viewResolution,
+    'EPSG:3857',
+    {'INFO_FORMAT': 'text/html'}
+  );
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById('gfi').innerHTML = html;
+      });
+  }
+});
 ```
 
 ### 8. 
