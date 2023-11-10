@@ -5,8 +5,7 @@
 ### 1. 
 
 ```
-<div id="info" class="info">
-		<div id="map" class="map"></div>
+	<div id="info" class="info">
 		<div id="legend" class="legend">
 			<p>Legende</p>
 			<img src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&LAYER=gdd:exports_percent_gdp">
