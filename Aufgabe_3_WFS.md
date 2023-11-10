@@ -21,4 +21,9 @@ GetFeature URL:
 
 http://localhost:8080/geoserver/wfs?service=wfs&request=GetFeature&version=1.1.0&typeNames=gdd:exports_percent_gdp&featureID=43&outputFormat=json
 
+Ergebnis:
+
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/564c68db-bfd5-4371-9c0b-120800042b95)
+
+
 ### 3. 
