@@ -54,46 +54,37 @@ var map = new ol.Map({
 ```
 
 ## 4.
+
 ```
-map.on('pointermove', function(browserEvent) {
-	// the mousemove event sends a browser event object that contains
-	// the geographic coordinate the event happened at
-	var coordinate = browserEvent.coordinate;
-	// we can get the closest feature from the source
-	var feature = vectorLayer.getSource().getClosestFeatureToCoordinate(coordinate);
-	// to compute the area of a feature, we need to get it's geometry and do
-	// something a little different depeneding on the geometry type.
-	
-	var geometry = feature.getGeometry().clone();
-	var sourceProj = map.getView().getProjection();
-	var targetProj = 'EPSG:4326'; // EPSG:4326 für Grad
+map.on('pointermove', function (evt) {
+  var coordinate = evt.coordinate;
+  var feature = vectorLayer.getSource().getClosestFeatureToCoordinate(coordinate);
+  var geometry = feature.getGeometry().clone();
+  var land = feature.get('land');
+  
+  var sourceProj = map.getView().getProjection();
+  geometry.transform(sourceProj, 'EPSG:4326');
+  
+  // Koordinaten der Bounding Box
+  var extent = geometry.getExtent();
+  var east = extent[0].toFixed(2);
+  var south = extent[1].toFixed(2);
+  var west = extent[2].toFixed(2);
+  var north = extent[3].toFixed(2);
 
-	// Transformation der Geometrie in Grad (EPSG:4326)
-	geometry.transform(sourceProj, targetProj);
-
-	// Extrahieren des Landnamens
-	var land = feature.get('land'); // Annahme: 'land' ist die Eigenschaft für das Land
-
-	// Extrahieren der Koordinaten der Bounding Box
-	var extent = geometry.getExtent();
-	var east = extent[0].toFixed(2);
-	var south = extent[1].toFixed(2);
-	var west = extent[2].toFixed(2);
-	var north = extent[3].toFixed(2);
-
-	// Rendern der HTML-Tabelle im gfi-DIV
-	var gfiDiv = document.getElementById('gfi');
-	gfiDiv.innerHTML = '<table>' +
-		'<tr><th>Land</th><th>' + land + '</th></tr>' +
-		'<tr><td>Ostgrenze</td><td>' + east + '</td></tr>' +
-		'<tr><td>Südgrenze</td><td>' + south + '</td></tr>' +
-		'<tr><td>Westgrenze</td><td>' + west + '</td></tr>' +
-		'<tr><td>Nordgrenze</td><td>' + north + '</td></tr>' +
-		'</table>';
+  var gfiDiv = document.getElementById('gfi');
+  gfiDiv.innerHTML = '<table>' +
+	'<tr><th>Land</th><th>' + land + '</th></tr>' +
+	'<tr><td>Ostgrenze:</td><td>' + east + '</td></tr>' +
+	'<tr><td>Südgrenze:</td><td>' + south + '</td></tr>' +
+	'<tr><td>Westgrenze:</td><td>' + west + '</td></tr>' +
+	'<tr><td>Nordgrenze:</td><td>' + north + '</td></tr>' +
+	'</table>';
 });
 ```
 
 ## 5.
+
 ´´´
 /* Styling der Tabelle */
 table {
