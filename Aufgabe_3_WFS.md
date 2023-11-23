@@ -85,15 +85,10 @@ map.on('pointermove', function (evt) {
 
 ## 5.
 
-´´´
-/* Styling der Tabelle */
+```
 table {
-    border-collapse: collapse;
-    max-width: 50%; /* Maximal 50% der verfügbaren Breite verwenden */
-    max-height: calc(100vh - 20px);
-    overflow-y: auto;
-    margin: 0 auto;
     display: inline-table; /* Nur so breit und hoch wie der enthaltene Text */
+	border: 1px solid black;
 }
 
 /* Styling der Überschriftenzellen */
@@ -101,13 +96,11 @@ th {
     text-align: left;
     padding: 10px;
     background-color: #cceeff;
-    border: 1px solid white;
 }
 
 /* Styling der normalen Zellen */
 td {
     padding: 10px;
-    border: 1px solid white;
 }
 
 /* Styling für gerade Zeilen */
@@ -119,4 +112,4 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #ffffcc;
 }
-´´´
+```
