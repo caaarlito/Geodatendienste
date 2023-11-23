@@ -116,3 +116,11 @@ tr:hover {
 
 6.
 
+Webapplikation:
+
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/54f07a85-53da-41b1-8e03-5d6dc9f23866)
+
+Farbänderung bei hovern über die Tabelle: 
+
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/61565be0-30e0-4ad4-9121-79784e913289)
+
