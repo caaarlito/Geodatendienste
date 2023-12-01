@@ -126,6 +126,8 @@ Farbänderung beim hovern über die Tabelle:
 
 7.
 
+7a) 
+
 ```
 d:
 cd D:\Programme\PostgreSQL\bin
@@ -136,9 +138,9 @@ psql -h localhost -p 5432 -U gdd -d gdd -c "CREATE TABLE world_cities(id serial 
 psql -h localhost -p 5432 -U gdd -d gdd -c "\COPY world_cities(city, lat, long, country, iso2, iso3, capital, population) FROM 'D:\Dokumente\1_Studium\5_Semester\Geodatendienste\Aufgabe_3\worldcities.csv' DELIMITER ';' CSV HEADER;"
 ```
 
-8.
+7b)
 
 Ein SERIAL ist ein eigenständiger Datentyp, wie man bei der Erstellung der Tabelle sehen kann. Eine SEQUENCE hingegen ist ein einfaches Objekt mit dem integer Nummern generiert werden können.
 
-9.
+8.
 
