@@ -124,3 +124,21 @@ Farbänderung beim hovern über die Tabelle:
 
 ![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/61565be0-30e0-4ad4-9121-79784e913289)
 
+7.
+
+```
+d:
+cd D:\Programme\PostgreSQL\bin
+
+set PGPASSWORD=gdd
+
+psql -h localhost -p 5432 -U gdd -d gdd -c "CREATE TABLE world_cities(id serial primary key, city varchar, lat float, long float, country varchar, iso2 char(2), iso3 char(3), capital varchar, population int);"
+psql -h localhost -p 5432 -U gdd -d gdd -c "\COPY world_cities(city, lat, long, country, iso2, iso3, capital, population) FROM 'D:\Dokumente\1_Studium\5_Semester\Geodatendienste\Aufgabe_3\worldcities.csv' DELIMITER ';' CSV HEADER;"
+```
+
+8.
+
+Ein SERIAL ist ein eigenständiger Datentyp, wie man bei der Erstellung der Tabelle sehen kann. Eine SEQUENCE hingegen ist ein einfaches Objekt mit dem integer Nummern generiert werden können.
+
+9.
+
