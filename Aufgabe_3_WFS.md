@@ -144,3 +144,13 @@ Ein SERIAL ist ein eigenständiger Datentyp, wie man bei der Erstellung der Tabe
 
 ### 8.
 
+```
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js'></script>
+<script src="https://github.com/springmeyer/arc.js/"></script>
+```
+
+### 9.
+
+
