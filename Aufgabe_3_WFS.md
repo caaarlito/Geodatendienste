@@ -233,4 +233,114 @@ $().ready(function(){
 ```
 ### 11.
 
+HTML: 
+
+```
+<div id="map" class="map"></div>
+	<div id="info" class="info">
+		<div id="legend" class="legend">
+			<p>Legende</p>
+			<img src="http://localhost:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.1.1&FORMAT=image/png&LAYER=gdd:exports_percent_gdp">
+		</div>
+		<p/>
+		<div id="gfi" class="gfi"></div>
+	</div><br>
+	<form>
+	 Feld 1: <input type="text" class="autocompleteFeld" name="Feld1" value=""><br>
+	 Feld 2: <input type="text" class="autocompleteFeld" name="Feld2" value=""><br>
+	</form>
+	<button type="button">Einlesen</button>
+	<div id="result"></div>
+```
+
+JS:
+
+```
+var capitals; 
+
+var vectorLayerCities = $.getJSON(
+	"http://localhost:8080/geoserver/wfs?service=wfs&request=GetFeature&version=1.1.0&typeNames=gdd:world_cities&outputFormat=json",
+	function(data) {
+		console.log("Daten erfolgreich geladen: ", data);
+		
+		capitals = $.grep( data.features, function(stadt) {
+			return stadt.properties.capital == 'primary'});
+		
+		console.log("gefilterte Daten:", capitals);
+		
+		var stadtForLoop = [];
+		for (var i = 0; i < capitals.length; i++) {
+		stadtForLoop.push(capitals[i].properties.city)};
+		console.log("Stadtnamen for: ", stadtForLoop);
+		
+		var stadtEach = [];
+		$.each(capitals, function(index, feature) {
+			stadtEach.push(feature.properties.city)});
+		console.log("Stadtnamen each: ", stadtEach);
+		
+		$('.autocompleteFeld').autocomplete({
+		source: stadtForLoop })	
+});
+
+var vectorLayerCircles = new ol.layer.Vector({
+	source: new ol.source.Vector()
+});
+
+$().ready(function(){
+  $("button").click(function(){
+    var x = $("form").serializeArray();
+	var cfrom = [];
+	var cto =[];
+	$("#result").empty();
+    $.each(x, function(i, field){
+	  var gesuchteStadt = $.grep(capitals, function(capital) {
+	  return capital.properties.city == field.value})[0];
+	  if (i==0) {
+		var cFromCoords = gesuchteStadt.geometry.coordinates;
+		var transformedCFrom = ol.proj.transform(cFromCoords, 'EPSG:3857', 'EPSG:4326');
+		cfrom.push(transformedCFrom); }
+	  else {
+		var cToCoords = gesuchteStadt.geometry.coordinates;
+		var transformedCTo = ol.proj.transform(cToCoords, 'EPSG:3857', 'EPSG:4326');
+		cto.push(transformedCTo); };
+	$("#result").append(field.value + " ") 
+    });
+	console.log(cfrom, cto);
+	
+	var fromPoint = turf.point(cfrom[0]);
+	var toPoint = turf.point(cto[0]);
+	var entfernung = turf.distance(fromPoint, toPoint, units="kilometers");
+	$("#result").append("Distanz: " + entfernung + " Kilometer");
+	
+	const arcGenerator = new arc.GreatCircle(
+		{ x: cfrom[0][0], y: cfrom[0][1] },
+		{ x: cto[0][0], y: cto[0][1] }
+          );
+	const arcLine = arcGenerator.Arc(100, {offset: 10});
+
+    const features = [];
+    arcLine.geometries.forEach(function (geometry) {
+        const line = new ol.geom.LineString(geometry.coords);
+        line.transform('EPSG:4326', 'EPSG:3857');
+
+        const feature = new ol.Feature({
+                geometry: line,
+                finished: false,
+            });
+		features.push(feature);
+	});
+	
+	vectorLayerCircles.getSource().clear();
+	
+	features.forEach(function(feature) {
+    vectorLayerCircles.getSource().addFeature(feature);
+	
+	const extent = vectorLayerCircles.getSource().getExtent();
+	const extentZoom = ol.extent.buffer(extent, 0.2 * (extent[2] - extent[0]));
+	map.getView().fit(extentZoom);
+    });
+  });
+});
+```
+
 ### 12.
