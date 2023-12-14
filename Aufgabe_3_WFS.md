@@ -191,6 +191,8 @@ var vectorLayerCities = $.getJSON(
 
 ### 10.
 
+.js Änderungen:
+
 ```
 		var stadtForLoop = [];
 		for (var i = 0; i < capitals.length; i++) {
@@ -206,6 +208,16 @@ var vectorLayerCities = $.getJSON(
 		source: stadtForLoop })	
 ```
 
+.html Änderungen:
+
+```
+	<form>
+	 Feld 1: <input type="text" class="autocompleteFeld" name="Feld1" value=""><br>
+	 Feld 2: <input type="text" class="autocompleteFeld" name="Feld2" value=""><br>
+	</form>
+	<button type="button">Einlesen</button>
+	<div id="result"></div>
+```
 ### 11.
 
 ### 12.
