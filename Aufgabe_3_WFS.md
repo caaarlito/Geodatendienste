@@ -208,6 +208,20 @@ var vectorLayerCities = $.getJSON(
 		source: stadtForLoop })	
 ```
 
+.js Button:
+
+```
+$().ready(function(){
+  $("button").click(function(){
+    var x = $("form").serializeArray();
+	$("#result").empty();
+    $.each(x, function(i, field){
+      $("#result").append(field.name + ":" + field.value + " ");
+    });
+  });
+});
+```
+
 .html Änderungen:
 
 ```
