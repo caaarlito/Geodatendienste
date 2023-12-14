@@ -185,7 +185,7 @@ var vectorLayerCities = $.getJSON(
 			return stadt.properties.capital == 'primary'});
 			
 		console.log("gefilterte Daten filter:", capitals2);
-})
+});
 
 ```
 
