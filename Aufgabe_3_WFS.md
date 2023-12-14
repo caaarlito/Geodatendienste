@@ -191,6 +191,21 @@ var vectorLayerCities = $.getJSON(
 
 ### 10.
 
+```
+		var stadtForLoop = [];
+		for (var i = 0; i < capitals.length; i++) {
+		stadtForLoop.push(capitals[i].properties.city)};
+		console.log("Stadtnamen for: ", stadtForLoop);
+		
+		var stadtEach = [];
+		$.each(capitals, function(index, feature) {
+			stadtEach.push(feature.properties.city)});
+		console.log("Stadtnamen each: ", stadtEach);
+
+		$('.autocompleteFeld').autocomplete({
+		source: stadtForLoop })	
+```
+
 ### 11.
 
 ### 12.
