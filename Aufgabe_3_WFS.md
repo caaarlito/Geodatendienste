@@ -155,3 +155,23 @@ Ein SERIAL ist ein eigenständiger Datentyp, wie man bei der Erstellung der Tabe
 ### 9.
 
 
+#### 9a)
+
+```
+var vectorLayerCities = $.getJSON(
+	"http://localhost:8080/geoserver/wfs?service=wfs&request=GetFeature&version=1.1.0&typeNames=gdd:world_cities&outputFormat=json",
+	function(data) { console.log("Daten erfolgreich geladen: ", data)
+})
+
+var vectorLayerCircles = new ol.layer.Vector({
+	source: new ol.source.Vector()
+});
+```
+
+#### 9b)
+
+### 10.
+
+### 11.
+
+### 12.
