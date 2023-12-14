@@ -170,6 +170,25 @@ var vectorLayerCircles = new ol.layer.Vector({
 
 #### 9b)
 
+```
+var vectorLayerCities = $.getJSON(
+	"http://localhost:8080/geoserver/wfs?service=wfs&request=GetFeature&version=1.1.0&typeNames=gdd:world_cities&outputFormat=json",
+	function(data) {
+		console.log("Daten erfolgreich geladen: ", data);
+		
+		var capitals = $.grep( data.features, function(stadt) {
+			return stadt.properties.capital == 'primary'});
+		
+		console.log("gefilterte Daten grep:", capitals);
+		
+		var capitals2 = data.features.filter(function(stadt) {
+			return stadt.properties.capital == 'primary'});
+			
+		console.log("gefilterte Daten filter:", capitals2);
+})
+
+```
+
 ### 10.
 
 ### 11.
