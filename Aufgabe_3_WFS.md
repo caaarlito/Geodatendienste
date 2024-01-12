@@ -344,11 +344,15 @@ $().ready(function(){
 ```
 
 ### 12.
+
 HTML: 
+
 ```
 <input id="swipe" type="range" style="width: 85%">
 ```
+
 js:
+
 ```
 const key = 'tE3JXZ2OVDvpJy7JyYua';
 const attributions =
@@ -404,3 +408,7 @@ var map = new ol.Map({
   view: view 
 });
 ```
+
+### Ergebnis
+
+![image](https://github.com/caaarlito/Geodatendienste/assets/134683878/afcbd0da-aac5-4733-95e1-d5d0533b992c)
