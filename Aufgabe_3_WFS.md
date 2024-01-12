@@ -168,7 +168,7 @@ var vectorLayerCircles = new ol.layer.Vector({
 ```
 
 #### 9b)
-##### --------- Luca ----------- welche beiden Lösungen?
+
 ```
 var vectorLayerCities = $.getJSON(
 	"http://localhost:8080/geoserver/wfs?service=wfs&request=GetFeature&version=1.1.0&typeNames=gdd:world_cities&outputFormat=json",
