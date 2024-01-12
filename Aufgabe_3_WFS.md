@@ -344,4 +344,53 @@ $().ready(function(){
 ```
 
 ### 12.
-tE3JXZ2OVDvpJy7JyYua
+HTML: 
+```
+<input id="swipe" type="range" style="width: 85%">
+```
+js:
+```
+const key = 'tE3JXZ2OVDvpJy7JyYua';
+const attributions =
+  '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> ' +
+  '<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>';
+
+const aerial = new ol.layer.Tile({
+  source: new ol.source.XYZ({
+    attributions: attributions,
+    url: 'https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=' + key,
+    maxZoom: 20,
+  }),
+});
+
+const swipe = document.getElementById('swipe');
+
+aerial.on('prerender', function (event) {
+  const ctx = event.context;
+  const mapSize = map.getSize();
+  const width = mapSize[0] * (swipe.value / 100);
+  const tl = ol.render.getRenderPixel(event, [width, 0]);
+  const tr = ol.render.getRenderPixel(event, [mapSize[0], 0]);
+  const bl = ol.render.getRenderPixel(event, [width, mapSize[1]]);
+  const br = ol.render.getRenderPixel(event, mapSize);
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(tl[0], tl[1]);
+  ctx.lineTo(bl[0], bl[1]);
+  ctx.lineTo(br[0], br[1]);
+  ctx.lineTo(tr[0], tr[1]);
+  ctx.closePath();
+  ctx.clip();
+});
+
+aerial.on('postrender', function (event) {
+  const ctx = event.context;
+  ctx.restore();
+});
+
+swipe.addEventListener('input', function () {
+  map.render();
+});
+
+```
