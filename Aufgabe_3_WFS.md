@@ -393,4 +393,14 @@ swipe.addEventListener('input', function () {
   map.render();
 });
 
+var map = new ol.Map({
+  target: 'map',
+  layers: [
+	wmsLayer,
+	vectorLayer,
+	vectorLayerCircles,
+	aerial
+  ],
+  view: view 
+});
 ```
